@@ -16,7 +16,7 @@ All URIs are relative to *https://sandbox-api.veem.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AttachmentControllerApi* | [**download_attachment_using_get**](Veem/api/AttachmentControllerApi.py#download_attachment_using_get) | **GET** /veem/v1.0/attachments | Downloads the referenced file
+*AttachmentControllerApi* | [**download_attachment_using_get**](Veem/api/attachment_controller_api.py#download_attachment_using_get) | **GET** /veem/v1.0/attachments | Downloads the referenced file
 *AttachmentControllerApi* | [**upload_attachment_using_post**](docs/AttachmentControllerApi.md#upload_attachment_using_post) | **POST** /veem/v1.0/attachments | Uploads the external attachment for an entity Payment or Invoice
 *ExchangeRateControllerApi* | [**generate_exchange_quote_using_post**](docs/ExchangeRateControllerApi.md#generate_exchange_quote_using_post) | **POST** /veem/v1.0/exchangerates/quotes | createQuote
 *InvoiceControllerApi* | [**approve_invoice_using_post**](docs/InvoiceControllerApi.md#approve_invoice_using_post) | **POST** /veem/v1.0/invoices/{invoiceId}/approve | approveInvoice
