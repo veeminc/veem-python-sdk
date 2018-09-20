@@ -1,0 +1,6 @@
+Instructions for uploading new version to testpypi
+
+1) Update setup.py to have new version number(ex. 1.0.5)
+2) Open up terminal, go to sdk directory
+3) Open python shell
+4) python setup.py sdist
