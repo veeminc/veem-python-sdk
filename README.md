@@ -33,22 +33,20 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [AlignMonetaryAmount](docs/AlignMonetaryAmount.md)
- - [ContactRequest](docs/ContactRequest.md)
- - [ContactResponse](docs/ContactResponse.md)
- - [CountryCurrencyResponse](docs/CountryCurrencyResponse.md)
- - [ErrorResponse](docs/ErrorResponse.md)
- - [ExchangeRateRequest](docs/ExchangeRateRequest.md)
- - [ExchangeRateResponse](docs/ExchangeRateResponse.md)
- - [FileAttachment](docs/FileAttachment.md)
- - [InvoiceRequest](docs/InvoiceRequest.md)
- - [InvoiceResponse](docs/InvoiceResponse.md)
- - [PagePaymentResponse](docs/PagePaymentResponse.md)
- - [PaymentRequest](docs/PaymentRequest.md)
- - [PaymentResponse](docs/PaymentResponse.md)
- - [PushPaymentInfoResponse](docs/PushPaymentInfoResponse.md)
- - [SimpleAccount](docs/SimpleAccount.md)
- - [Sort](docs/Sort.md)
+ - [AlignMonetaryAmount](Veem/models/align_monetary_amount.py)
+ - [ContactRequest](Veem/models/contact_request.py)
+ - [ContactListResponse](Veem/models/contact_list_response.py)
+ - [ContactResponse](Veem/models/contact_response.py)
+ - [CountryCurrencyResponse](Veem/models/country_currency_response.py)
+ - [CustomerResponse](Veem/models/customer_response.py)
+ - [ExchangeRateRequest](Veem/models/exchange_rate_request.py)
+ - [ExchangeRateResponse](Veem/models/exchange_rate_response.py)
+ - [InvoiceRequest](Veem/models/invoice_request.py)
+ - [InvoiceResponse](Veem/models/invoice_response.py)
+ - [PaymentRequest](Veem/models/payment_request.py)
+ - [PaymentResponse](Veem/models/payment_response.py)
+ - [PaymentsReponse](Veem/models/payments_response.py)
+
 
 
 ## Documentation For Authorization
