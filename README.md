@@ -12,19 +12,7 @@ Python 2.7 and 3.4+
 
 
 
-### Setuptools
 
-Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
-
-```sh
-python setup.py install --user
-```
-(or `sudo python setup.py install` to install the package for all users)
-
-Then import the package:
-```python
-import swagger_client
-```
 
 
 
