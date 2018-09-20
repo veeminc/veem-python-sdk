@@ -22,8 +22,6 @@ All URIs are relative to *https://sandbox-api.veem.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccountControllerApi* | [**create_contact_using_post**](docs/AccountControllerApi.md#create_contact_using_post) | **POST** /veem/v1.0/accounts/contacts/batch | createContactInBatch
-*AccountControllerApi* | [**create_contact_using_post1**](docs/AccountControllerApi.md#create_contact_using_post1) | **POST** /veem/v1.0/accounts/contacts | createContact
 *AttachmentControllerApi* | [**download_attachment_using_get**](docs/AttachmentControllerApi.md#download_attachment_using_get) | **GET** /veem/v1.0/attachments | Downloads the referenced file
 *AttachmentControllerApi* | [**upload_attachment_using_post**](docs/AttachmentControllerApi.md#upload_attachment_using_post) | **POST** /veem/v1.0/attachments | Uploads the external attachment for an entity Payment or Invoice
 *ExchangeRateControllerApi* | [**generate_exchange_quote_using_post**](docs/ExchangeRateControllerApi.md#generate_exchange_quote_using_post) | **POST** /veem/v1.0/exchangerates/quotes | createQuote
