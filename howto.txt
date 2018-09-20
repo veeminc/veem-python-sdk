@@ -1,4 +1,4 @@
-Instructions for uploading/downlaoding new version to testpypi
+Instructions for uploading/downloading new version to testpypi
 
 ----------------Upload------------------------------------------------------
 1) Update setup.py to have new version number(ex. 1.0.5)
