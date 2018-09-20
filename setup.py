@@ -12,7 +12,7 @@ VERSION = "1.0.3"
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
+REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil", "requests >= 2.15"]
 
 class register(register_orig):
 
@@ -29,7 +29,7 @@ setup(
     version=VERSION,
     description="Veem Python API",
     author_email="dev@veem.com",
-    url="https://github.com/dharsomsubhro/veem-python-new/archive/1.0.2.tar.gz",
+    url="https://github.com/veeminc/veem-python-sdk",
     keywords=["Veem API"],
     install_requires=REQUIRES,
     packages=find_packages(),
