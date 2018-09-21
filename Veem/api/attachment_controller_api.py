@@ -23,12 +23,13 @@ import magic
 class AttachmentControllerApi(object):
 
 
-    def __init__(self, api_client=None):
+    def __init__(self, api_client=None, access_token):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
         self.config=Configuration()
         self.attachment_url=self.config.host+"attachments"
+        self.access_token=access_token
 
     def deserialize(self,response):
         name=response['name']
@@ -113,7 +114,7 @@ class AttachmentControllerApi(object):
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
-        header_params['Authorization']=self.config.access_token
+        header_params['Authorization']=self.access_token
 
         header_params['X-REQUEST-ID']=str(uuid.uuid4())
 
@@ -215,7 +216,7 @@ class AttachmentControllerApi(object):
 
         body_params = None
         header_params['Content-Type'] = "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW"
-        header_params['Authorization']=self.config.access_token
+        header_params['Authorization']=self.access_token
 
         header_params['X-REQUEST-ID']=str(uuid.uuid4())
 
