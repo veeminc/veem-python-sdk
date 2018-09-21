@@ -23,7 +23,7 @@ import magic
 class AttachmentControllerApi(object):
 
 
-    def __init__(self, api_client=None, access_token):
+    def __init__(self, access_token,api_client=None, ):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client

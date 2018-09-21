@@ -20,7 +20,7 @@ from Veem.models.contact_list_response import ContactListResponse
 class ContactControllerApi(object):
 
 
-    def __init__(self, api_client=None, acess_token):
+    def __init__(self,  access_token,api_client=None):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
