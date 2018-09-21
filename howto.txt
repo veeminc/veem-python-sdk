@@ -12,7 +12,7 @@ Instructions for uploading/downloading new version to testpypi
 -------------------Download--------------------------------------------------
 
 1) Open terminal
-2) pip install --extra-index-url https://testpypi.python.org/pypi veem-python -- upgrade
+2) pip install --extra-index-url https://testpypi.python.org/pypi veem-python==version_number
 3) Open Python Shell
 4) import Veem
 5) This should work
