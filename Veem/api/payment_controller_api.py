@@ -18,12 +18,13 @@ from Veem.configuration import Configuration
 class PaymentControllerApi(object):
 
 
-    def __init__(self, api_client=None):
+    def __init__(self, api_client=None, access_token):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
         self.config=Configuration()
         self.payment_url=self.config.host+"payments"
+        self.access_token=access_token
 
     def deserializePayments(self,response):
         content=response['content']
@@ -143,7 +144,7 @@ class PaymentControllerApi(object):
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
-        header_params['Authorization']=self.config.access_token
+        header_params['Authorization']=self.access_token
         url = self.payment_url+"/"+str(payment_id)+"/approve"
 
         header_params['X-REQUEST-ID']=str(uuid.uuid4())
@@ -228,7 +229,7 @@ class PaymentControllerApi(object):
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
 
-        header_params['Authorization']=self.config.access_token
+        header_params['Authorization']=self.access_token
         url = self.payment_url
 
         header_params['X-REQUEST-ID']=str(uuid.uuid4())
@@ -314,7 +315,7 @@ class PaymentControllerApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
-        header_params['Authorization']=self.config.access_token
+        header_params['Authorization']=self.access_token
 
         header_params['X-REQUEST-ID']=str(uuid.uuid4())
         # Authentication setting
@@ -408,7 +409,7 @@ class PaymentControllerApi(object):
             status=kwargs['status']
             querystring = {"status":status}
 
-        header_params['Authorization']=self.config.access_token
+        header_params['Authorization']=self.access_token
         url = self.payment_url
 
         response = requests.request("GET", url,headers=header_params, params=querystring)
@@ -488,7 +489,7 @@ class PaymentControllerApi(object):
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
-        header_params['Authorization']=self.config.access_token
+        header_params['Authorization']=self.access_token
         url = self.payment_url+"/"+str(payment_id)+"/cancel"
         header_params['X-REQUEST-ID']=str(uuid.uuid4())
         # Authentication setting
