@@ -64,5 +64,5 @@ Class | Method | HTTP request | Description
 
 ## Author
 
-dev@veem.com
+devsupport@veem.com
 
