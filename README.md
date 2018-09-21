@@ -8,7 +8,8 @@ For more information, please visit [veem.com](veem.com)
 Python 2.7 and 3.4+
 
 ## Installation & Usage
-### pip install veem-python
+### (test version) - pip install --extra-index-url https://testpypi.python.org/pypi veem-python
+### (final version) - pip install veem-python
 
 ## Documentation for API Endpoints
 
