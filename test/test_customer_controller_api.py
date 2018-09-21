@@ -9,18 +9,20 @@ import Veem
 from Veem.api.customer_controller_api import CustomerControllerApi  # noqa: E501
 from Veem.rest import ApiException
 from Veem.VeemError import VeemError
+from configuration import Configuration
 
 
 class TestCustomerControllerApi(unittest.TestCase):
 
     def setUp(self):
         self.api = CustomerControllerApi()  # noqa: E501
+        self.config=Configuration()
 
     def tearDown(self):
         pass
 
     def testCorrectInput(self):
-        test_controller = CustomerControllerApi()
+        test_controller = CustomerControllerApi(self.config.access_token)
         response=test_controller.search_customers_using_get(email="dhar.somsubhro@gmail.com")
         assert response.content==[
     {
@@ -35,12 +37,12 @@ class TestCustomerControllerApi(unittest.TestCase):
   ]
 
     def testEmailNotInSystem(self):
-        test=CustomerControllerApi()
+        test=CustomerControllerApi(self.config.access_token)
         response=test.search_customers_using_get(email="hello@nope.com")
         assert response.content==[] and response.number_of_elements==0
 
     def testNotEmail(self):
-        test=CustomerControllerApi()
+        test=CustomerControllerApi(self.config.access_token)
         try:
             response=test.search_customers_using_get(email="hello")
         except VeemError as error:
