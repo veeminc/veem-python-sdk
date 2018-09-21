@@ -15,11 +15,12 @@ from Veem.configuration import Configuration
 
 class MetaControllerApi(object):
 
-    def __init__(self, api_client=None):
+    def __init__(self, api_client=None, access_token):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
         self.config=Configuration()
+        self.access_token=access_token
 
     def get_country_currency_map_using_get(self, **kwargs):  # noqa: E501
         """Country Currency Map  # noqa: E501
@@ -83,7 +84,7 @@ class MetaControllerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        header_params['Authorization']=self.config.access_token
+        header_params['Authorization']=self.access_token
 
         header_params['X-REQUEST-ID']=str(uuid.uuid4())
 
