@@ -11,6 +11,7 @@ from Veem.api.invoice_controller_api import InvoiceControllerApi  # noqa: E501
 from Veem.rest import ApiException
 from Veem.models.invoice_request import InvoiceRequest
 from Veem.VeemError import VeemError
+from configuration import Configuration
 
 
 class TestInvoiceControllerApi(unittest.TestCase):
@@ -18,6 +19,7 @@ class TestInvoiceControllerApi(unittest.TestCase):
 
     def setUp(self):
         self.api = InvoiceControllerApi()  # noqa: E501
+        self.config=Configuration()
 
     def tearDown(self):
         pass
@@ -41,7 +43,7 @@ class TestInvoiceControllerApi(unittest.TestCase):
         payer['type']='Personal'
         payer['phone']='+1-747-241-9816'
 
-        test=InvoiceControllerApi()
+        test=InvoiceControllerApi(self.config.access_token)
         request=InvoiceRequest(amount=amount, payer=payer)  # noqa: E501
         response=test.create_invoice_using_post(request)
         assert response.amount_number==30 and response.payer_email=='dhar.somsubhro+1@gmail.com' and response.request_id is not None and response.exchangeRate_toCurrency=='USD'
@@ -65,7 +67,7 @@ class TestInvoiceControllerApi(unittest.TestCase):
         payer['type']='Personal'
         payer['phone']='+1-747-241-9816'
 
-        test=InvoiceControllerApi()
+        test=InvoiceControllerApi(self.config.access_token)
         request=InvoiceRequest(amount=amount, payer=payer)  # noqa: E501
         try:
             response=test.create_invoice_using_post(request)
@@ -77,13 +79,13 @@ class TestInvoiceControllerApi(unittest.TestCase):
 
     def testGetExists(self):
 
-        test=InvoiceControllerApi()
+        test=InvoiceControllerApi(self.config.access_token)
         response=test.get_invoice_using_get('36470')
         assert response.id==36470 and response.status=="Sent"
 
     def testGetNonexistant(self):
 
-        test=InvoiceControllerApi()
+        test=InvoiceControllerApi(self.config.access_token)
         try:
             response=test.get_invoice_using_get('11111')
         except VeemError as error:
@@ -117,7 +119,7 @@ class TestInvoiceControllerApi(unittest.TestCase):
 
     def testApproveNonexistant(self):
 
-        test=InvoiceControllerApi()
+        test=InvoiceControllerApi(self.config.access_token)
         try:
             response=test.approve_invoice_using_post('53126')
         except VeemError as error:
@@ -128,7 +130,7 @@ class TestInvoiceControllerApi(unittest.TestCase):
 
     def testCancelNonexistant(self):
 
-        test=InvoiceControllerApi()
+        test=InvoiceControllerApi(self.config.access_token)
         try:
             response=test.cancel_invoice_using_post('53126')
         except VeemError as error:
@@ -153,7 +155,7 @@ class TestInvoiceControllerApi(unittest.TestCase):
         payer['type']='Personal'
         payer['phone']='+1-747-241-9816'
 
-        test=InvoiceControllerApi()
+        test=InvoiceControllerApi(self.config.access_token)
         request=InvoiceRequest(amount=amount,payer=payer)  # noqa: E501
         response=test.create_invoice_using_post(request)
         cancelled=test.cancel_invoice_using_post(response.id)
