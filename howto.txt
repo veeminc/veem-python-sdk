@@ -4,11 +4,10 @@ Instructions for uploading/downloading new version to testpypi
 ***Though not necessary, would be good to to a version of the github repo***
 1) Update setup.py to have new version number(ex. 1.0.5)
 2) Open up terminal, go to sdk directory
-3) Open python shell
-4) python setup.py sdist
-5) twine upload --repository-url https://test.pypi.org/legacy/ dist/*
-6) Give username and password
-7) Upload complete
+3) python setup.py sdist
+4) twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+5) Give username and password
+6) Upload complete
 
 -------------------Download--------------------------------------------------
 
