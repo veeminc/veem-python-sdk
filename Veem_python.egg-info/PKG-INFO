@@ -1,8 +1,8 @@
 Metadata-Version: 1.0
 Name: Veem-python
-Version: 1.0.3
+Version: 2.0.7
 Summary: Veem Python API
-Home-page: https://github.com/dharsomsubhro/veem-python-new/archive/1.0.2.tar.gz
+Home-page: https://github.com/veeminc/veem-python-sdk/
 Author: UNKNOWN
 Author-email: dev@veem.com
 License: UNKNOWN

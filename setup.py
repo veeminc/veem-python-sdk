@@ -4,7 +4,7 @@ from distutils.command.upload import upload as upload_orig
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "Veem-python"
-VERSION = "1.0.3"
+VERSION = "2.0.7"
 # To install the library, run the following
 #
 # python setup.py install
@@ -12,7 +12,7 @@ VERSION = "1.0.3"
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil", "requests >= 2.15"]
+REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
 
 class register(register_orig):
 
@@ -29,7 +29,7 @@ setup(
     version=VERSION,
     description="Veem Python API",
     author_email="dev@veem.com",
-    url="https://github.com/veeminc/veem-python-sdk",
+    url="https://github.com/veeminc/veem-python-sdk/",
     keywords=["Veem API"],
     install_requires=REQUIRES,
     packages=find_packages(),
