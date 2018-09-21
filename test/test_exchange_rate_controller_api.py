@@ -10,6 +10,7 @@ from Veem.api.exchange_rate_controller_api import ExchangeRateControllerApi  # n
 from Veem.rest import ApiException
 from Veem.models.exchange_rate_request import ExchangeRateRequest
 from Veem.VeemError import VeemError
+from configuration import Configuration
 
 
 class TestExchangeRateControllerApi(unittest.TestCase):
@@ -17,7 +18,8 @@ class TestExchangeRateControllerApi(unittest.TestCase):
 
     def setUp(self):
         self.api = ExchangeRateControllerApi()  # noqa: E501
-
+        self.config=Configuration()
+         
     def tearDown(self):
         pass
 
@@ -25,7 +27,7 @@ class TestExchangeRateControllerApi(unittest.TestCase):
         """Test case for generate_exchange_quote_using_post
 
         """
-        test_controller = ExchangeRateControllerApi()
+        test_controller = ExchangeRateControllerApi(self.config.access_token)
 
         request = ExchangeRateRequest(to_amount=100.0,from_currency='USD', to_country='IN', to_currency='INR', recipient_account_email='hi@gm.com')
         response=test_controller.create_quote_using_post(request)
@@ -33,7 +35,7 @@ class TestExchangeRateControllerApi(unittest.TestCase):
 
 
     def testNeitherAmount(self):
-        test_controller = ExchangeRateControllerApi()
+        test_controller = ExchangeRateControllerApi(self.config.access_token)
         request = ExchangeRateRequest(from_currency='USD', to_country='IN', to_currency='INR', recipient_account_email='hi@gm.com')
         try:
             response=test_controller.create_quote_using_post(request)
@@ -43,7 +45,7 @@ class TestExchangeRateControllerApi(unittest.TestCase):
             self.fail('VeemError not raised correctly')
 
     def testBothAmounts(self):
-        test_controller = ExchangeRateControllerApi()
+        test_controller = ExchangeRateControllerApi(self.config.access_token)
         request = ExchangeRateRequest(to_amount=100.0,from_amount=100.0,from_currency='USD', to_country='IN', to_currency='INR', recipient_account_email='hi@gm.com')
         try:
             response=test_controller.create_quote_using_post(request)
@@ -53,7 +55,7 @@ class TestExchangeRateControllerApi(unittest.TestCase):
             self.fail('VeemError not raised correctly')
 
     def testMissingOthers(self):
-        test_controller = ExchangeRateControllerApi()
+        test_controller = ExchangeRateControllerApi(self.config.access_token)
         request = ExchangeRateRequest(to_amount=100.0, to_country='IN', to_currency='INR', recipient_account_email='hi@gm.com')
         try:
             response=test_controller.create_quote_using_post(request)
