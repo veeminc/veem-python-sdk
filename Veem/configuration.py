@@ -46,8 +46,6 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         # Password for HTTP basic authentication
         self.password = ""
 
-        # access token for OAuth
-        self.access_token = "Bearer 1402be2f-e9fd-45e8-81ed-8dedbaa43b6a"
 
         # Logging Settings
         self.logger = {}
