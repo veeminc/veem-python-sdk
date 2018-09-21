@@ -2,6 +2,7 @@
 Veem REST API
 
 For more information, please visit [veem.com](veem.com)
+For developer documentation, please visit [developer website](developer.veem.com)
 
 ## Requirements.
 
