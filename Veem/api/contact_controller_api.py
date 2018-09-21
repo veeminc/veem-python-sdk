@@ -20,12 +20,13 @@ from Veem.models.contact_list_response import ContactListResponse
 class ContactControllerApi(object):
 
 
-    def __init__(self, api_client=None):
+    def __init__(self, api_client=None, acess_token):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
         self.config=Configuration()
         self.contact_url=self.config.host+"contacts"
+        self.access_token=access_token
 
     def deserialize(self, response):
         batchId=response['batchId']
@@ -88,7 +89,7 @@ class ContactControllerApi(object):
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
 
-        header_params['Authorization']=self.config.access_token
+        header_params['Authorization']=self.access_token
 
         header_params['X-REQUEST-ID']=str(uuid.uuid4())
         # HTTP header `Content-Type`
@@ -149,7 +150,7 @@ class ContactControllerApi(object):
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
 
-        header_params['Authorization']=self.config.access_token
+        header_params['Authorization']=self.access_token
 
         header_params['X-REQUEST-ID']=str(uuid.uuid4())
         # HTTP header `Content-Type`
@@ -207,7 +208,7 @@ class ContactControllerApi(object):
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
 
-        header_params['Authorization']=self.config.access_token
+        header_params['Authorization']=self.access_token
 
         header_params['X-REQUEST-ID']=str(uuid.uuid4())
         # HTTP header `Content-Type`
