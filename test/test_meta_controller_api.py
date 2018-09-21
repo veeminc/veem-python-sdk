@@ -7,6 +7,7 @@ import Veem
 from Veem.api.meta_controller_api import MetaControllerApi  # noqa: E501
 from Veem.rest import ApiException
 import requests
+from configuration import Configuration
 
 
 class TestMetaControllerApi(unittest.TestCase):
@@ -14,6 +15,7 @@ class TestMetaControllerApi(unittest.TestCase):
 
     def setUp(self):
         self.api = MetaControllerApi()  # noqa: E501
+        self.config=Configuration()
 
     def tearDown(self):
         pass
@@ -23,7 +25,7 @@ class TestMetaControllerApi(unittest.TestCase):
 
         Country Currency Map  # noqa: E501
         """
-        test=MetaControllerApi()
+        test=MetaControllerApi(self.config.access_token)
         result=test.get_country_currency_map_using_get()
         assert result is not None
         
@@ -32,7 +34,7 @@ class TestMetaControllerApi(unittest.TestCase):
 
         Country Currency Map  # noqa: E501
         """
-        test=MetaControllerApi()
+        test=MetaControllerApi(self.config.access_token))
         result=test.get_country_currency_map_using_get(bankFields=True)
         assert result is not None
 
@@ -41,7 +43,7 @@ class TestMetaControllerApi(unittest.TestCase):
 
         Country Currency Map  # noqa: E501
         """
-        test=MetaControllerApi()
+        test=MetaControllerApi(self.config.access_token))
         result=test.get_country_currency_map_using_get(bankFields=False)
         assert result is not None
 
@@ -50,7 +52,7 @@ class TestMetaControllerApi(unittest.TestCase):
 
         Country Currency Map  # noqa: E501
         """
-        test=MetaControllerApi()
+        test=MetaControllerApi(self.config.access_token))
         try:
             result=test.get_country_currency_map_using_get(bankFields=1)
         except AttributeError as err:
