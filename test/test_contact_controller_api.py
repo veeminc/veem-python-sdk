@@ -11,15 +11,16 @@ from Veem.api.contact_controller_api import ContactControllerApi  # noqa: E501
 from Veem.rest import ApiException
 from Veem.VeemError import VeemError
 from Veem.models.contact_request import ContactRequest
-from configuration import Configuration
+from test.configuration import Configuration
 
 
 class TestContactControllerApi(unittest.TestCase):
 
     def setUp(self):
-        self.api = ContactControllerApi()  # noqa: E501
         self.config=Configuration()
-        
+        self.api = ContactControllerApi(self.config.access_token)  # noqa: E501
+
+
     def tearDown(self):
         pass
 

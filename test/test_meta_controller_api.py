@@ -7,15 +7,16 @@ import Veem
 from Veem.api.meta_controller_api import MetaControllerApi  # noqa: E501
 from Veem.rest import ApiException
 import requests
-from configuration import Configuration
+from test.configuration import Configuration
 
 
 class TestMetaControllerApi(unittest.TestCase):
     """MetaControllerApi unit test stubs"""
 
     def setUp(self):
-        self.api = MetaControllerApi()  # noqa: E501
         self.config=Configuration()
+        self.api = MetaControllerApi(self.config.access_token)  # noqa: E501
+
 
     def tearDown(self):
         pass
@@ -28,7 +29,7 @@ class TestMetaControllerApi(unittest.TestCase):
         test=MetaControllerApi(self.config.access_token)
         result=test.get_country_currency_map_using_get()
         assert result is not None
-        
+
     def testGetBankFieldsTrue(self):
         """Test case for get_country_currency_map_using_get
 

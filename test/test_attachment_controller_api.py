@@ -9,7 +9,7 @@ from Veem.api.attachment_controller_api import AttachmentControllerApi  # noqa: 
 from Veem.rest import ApiException
 import requests
 from Veem.VeemError import VeemError
-from configuration import Configuration
+from test.configuration import Configuration
 
 
 
@@ -17,8 +17,9 @@ class TestAttachmentControllerApi(unittest.TestCase):
 
 
     def setUp(self):
-        self.api = AttachmentControllerApi()  # noqa: E501
         self.config=Configuration()
+        self.api = AttachmentControllerApi(self.config.access_token)  # noqa: E501
+
 
     def tearDown(self):
         pass

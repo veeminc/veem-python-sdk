@@ -10,16 +10,17 @@ from Veem.api.exchange_rate_controller_api import ExchangeRateControllerApi  # n
 from Veem.rest import ApiException
 from Veem.models.exchange_rate_request import ExchangeRateRequest
 from Veem.VeemError import VeemError
-from configuration import Configuration
+from test.configuration import Configuration
 
 
 class TestExchangeRateControllerApi(unittest.TestCase):
     """ExchangeRateControllerApi unit test stubs"""
 
     def setUp(self):
-        self.api = ExchangeRateControllerApi()  # noqa: E501
         self.config=Configuration()
-         
+        self.api = ExchangeRateControllerApi(self.config.access_token)  # noqa: E501
+
+
     def tearDown(self):
         pass
 

@@ -11,15 +11,16 @@ from Veem.api.invoice_controller_api import InvoiceControllerApi  # noqa: E501
 from Veem.rest import ApiException
 from Veem.models.invoice_request import InvoiceRequest
 from Veem.VeemError import VeemError
-from configuration import Configuration
+from test.configuration import Configuration
 
 
 class TestInvoiceControllerApi(unittest.TestCase):
     """InvoiceControllerApi unit test stubs"""
 
     def setUp(self):
-        self.api = InvoiceControllerApi()  # noqa: E501
         self.config=Configuration()
+        self.api = InvoiceControllerApi(self.config.access_token)  # noqa: E501
+
 
     def tearDown(self):
         pass

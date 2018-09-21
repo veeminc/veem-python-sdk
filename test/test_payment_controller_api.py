@@ -12,7 +12,7 @@ from Veem.api.payment_controller_api import PaymentControllerApi  # noqa: E501
 from Veem.rest import ApiException
 from Veem.models.payment_request import PaymentRequest
 from Veem.VeemError import VeemError
-from configuration import Configuration
+from test.configuration import Configuration
 
 
 
@@ -20,8 +20,9 @@ class TestPaymentControllerApi(unittest.TestCase):
 
 
     def setUp(self):
-        self.api = PaymentControllerApi()
         self.config=Configuration()
+        self.api = PaymentControllerApi(self.config.access_token)
+
 
     def tearDown(self):
         pass

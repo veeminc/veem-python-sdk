@@ -9,14 +9,15 @@ import Veem
 from Veem.api.customer_controller_api import CustomerControllerApi  # noqa: E501
 from Veem.rest import ApiException
 from Veem.VeemError import VeemError
-from configuration import Configuration
+from test.configuration import Configuration
 
 
 class TestCustomerControllerApi(unittest.TestCase):
 
     def setUp(self):
-        self.api = CustomerControllerApi()  # noqa: E501
         self.config=Configuration()
+        self.api = CustomerControllerApi(self.config.access_token)  # noqa: E501
+
 
     def tearDown(self):
         pass
