@@ -12,7 +12,7 @@ from Veem.api.payment_controller_api import PaymentControllerApi  # noqa: E501
 from Veem.rest import ApiException
 from Veem.models.payment_request import PaymentRequest
 from Veem.VeemError import VeemError
-#from Veem.api.attachment_controller_api import AttachmentControllerApi  # noqa: E501
+from configuration import Configuration
 
 
 
@@ -21,12 +21,13 @@ class TestPaymentControllerApi(unittest.TestCase):
 
     def setUp(self):
         self.api = PaymentControllerApi()
+        self.config=Configuration()
 
     def tearDown(self):
         pass
     def test_get_payments_by_status_using_get(self):
 
-        test=PaymentControllerApi()
+        test=PaymentControllerApi(self.config.access_token)
         response=test.get_payments_by_status_using_get(status='Complete')
         assert response.number_of_elements==8 and response.size==25
 
@@ -55,7 +56,7 @@ class TestPaymentControllerApi(unittest.TestCase):
 
         purpose_of_payment='Services'
 
-        test=PaymentControllerApi()
+        test=PaymentControllerApi(self.config.access_token)
         request=PaymentRequest(amount=amount, approve_automatically=approve_automatically,payee=payee, payee_amount=payee_amount, purpose_of_payment=purpose_of_payment)
         response=test.create_payment_using_post(request)
         approvedResponse=test.approve_payment_using_post(response.id)
@@ -63,7 +64,7 @@ class TestPaymentControllerApi(unittest.TestCase):
 
     def testApproveNonexistant(self):
 
-        test=PaymentControllerApi()
+        test=PaymentControllerApi(self.config.access_token)
         try:
             response=test.approve_payment_using_post('53126')
         except VeemError as error:
@@ -95,7 +96,7 @@ class TestPaymentControllerApi(unittest.TestCase):
 
 
 
-        test=PaymentControllerApi()
+        test=PaymentControllerApi(self.config.access_token)
         request=PaymentRequest(amount=amount, payee=payee, payee_amount=payee_amount, purpose_of_payment=purpose_of_payment)
         response=test.create_payment_using_post(request)
         assert response.request_id is not None and response.claim_link is not None and response.exchangeRate_fromAmount==100
@@ -165,7 +166,7 @@ class TestPaymentControllerApi(unittest.TestCase):
         purpose_of_payment='Services'
 
 
-        test=PaymentControllerApi()
+        test=PaymentControllerApi(self.config.access_token)
         request=PaymentRequest(amount=amount, payee=payee, payee_amount=payee_amount, purpose_of_payment=purpose_of_payment)
         try:
             response=test.create_payment_using_post(request)
@@ -179,13 +180,13 @@ class TestPaymentControllerApi(unittest.TestCase):
 
     def testGetExists(self):
 
-        test=PaymentControllerApi()
+        test=PaymentControllerApi(self.config.access_token)
         response=test.get_payment_using_get('53126')
         assert response.id==53126 and response.payee_email=="dhar.somsubhro+1@gmail.com"
 
     def testGetNonexistant(self):
 
-        test=PaymentControllerApi()
+        test=PaymentControllerApi(self.config.access_token)
         try:
             response=test.get_payment_using_get('11111')
         except VeemError as error:
@@ -223,7 +224,7 @@ class TestPaymentControllerApi(unittest.TestCase):
 
 
 
-        test=PaymentControllerApi()
+        test=PaymentControllerApi(self.config.access_token)
         request=PaymentRequest(amount=amount, approve_automatically=approve_automatically,payee=payee, payee_amount=payee_amount, purpose_of_payment=purpose_of_payment)
         response=test.create_payment_using_post(request)
         cancelled=test.cancel_payment_using_post(response.id)
@@ -232,7 +233,7 @@ class TestPaymentControllerApi(unittest.TestCase):
 
     def testCancelNonexistant(self):
 
-        test=PaymentControllerApi()
+        test=PaymentControllerApi(self.config.access_token)
         try:
             response=test.cancel_payment_using_post('53126')
         except VeemError as error:
