@@ -23,12 +23,13 @@ class InvoiceControllerApi(object):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def __init__(self, api_client=None):
+    def __init__(self, api_client=None, access_token):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
         self.config=Configuration()
         self.invoice_url=self.config.host+"invoices"
+        self.access_token=access_token
 
 
 
@@ -133,7 +134,7 @@ class InvoiceControllerApi(object):
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
-        header_params['Authorization']=self.config.access_token
+        header_params['Authorization']=self.access_token
 
         header_params['X-REQUEST-ID']=str(uuid.uuid4())
 
@@ -223,7 +224,7 @@ class InvoiceControllerApi(object):
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
-        header_params['Authorization']=self.config.access_token
+        header_params['Authorization']=self.access_token
 
         header_params['X-REQUEST-ID']=str(uuid.uuid4())
 
@@ -311,7 +312,7 @@ class InvoiceControllerApi(object):
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
-        header_params['Authorization']=self.config.access_token
+        header_params['Authorization']=self.access_token
 
         header_params['X-REQUEST-ID']=str(uuid.uuid4())
 
@@ -400,7 +401,7 @@ class InvoiceControllerApi(object):
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
-        header_params['Authorization']='Bearer 1402be2f-e9fd-45e8-81ed-8dedbaa43b6a'
+        header_params['Authorization']=self.access_token
 
         header_params['X-REQUEST-ID']=str(uuid.uuid4())
 
