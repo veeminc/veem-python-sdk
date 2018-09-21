@@ -11,20 +11,22 @@ from Veem.api.contact_controller_api import ContactControllerApi  # noqa: E501
 from Veem.rest import ApiException
 from Veem.VeemError import VeemError
 from Veem.models.contact_request import ContactRequest
+from configuration import Configuration
 
 
 class TestContactControllerApi(unittest.TestCase):
 
     def setUp(self):
         self.api = ContactControllerApi()  # noqa: E501
-
+        self.config=Configuration()
+        
     def tearDown(self):
         pass
 
 
     def testGetBatchDoesntExists(self):
 
-        test=ContactControllerApi()
+        test=ContactControllerApi(self.config.access_token)
         try:
             response=test.get_contact_batch_using_get(batch_id='12345')
         except VeemError as error:
@@ -32,7 +34,7 @@ class TestContactControllerApi(unittest.TestCase):
 
     def testCreateNotNewContact(self):
 
-        test=ContactControllerApi()
+        test=ContactControllerApi(self.config.access_token)
 
 
         batch_item_id=1
@@ -54,7 +56,7 @@ class TestContactControllerApi(unittest.TestCase):
 
     def testCreateMultipleContacts(self):
 
-        test=ContactControllerApi()
+        test=ContactControllerApi(self.config.access_token)
 
         batch_item_id=1
         business_name='Hello INC'
@@ -83,7 +85,7 @@ class TestContactControllerApi(unittest.TestCase):
 
     def testGetMultipleContacts(self):
 
-        test=ContactControllerApi()
+        test=ContactControllerApi(self.config.access_token)
 
         batch_item_id=1
         business_name='Hello INC'
@@ -105,7 +107,7 @@ class TestContactControllerApi(unittest.TestCase):
 
     def testGetBatchExists(self):
 
-        test=ContactControllerApi()
+        test=ContactControllerApi(self.config.access_token)
         response=test.get_contact_batch_using_get(batch_id='16')
         assert response.batch_id==16 and response.total_items==1 and response.processed_items==1 and response.status=="Completed"
 
@@ -113,13 +115,13 @@ class TestContactControllerApi(unittest.TestCase):
 
     def testGetExists(self):
 
-        test=ContactControllerApi()
+        test=ContactControllerApi(self.config.access_token)
         response=test.get_contacts_using_get(batch_id='16')
         assert response.total_elements==25 and response.last==False and response.size==20
 
     def testGetDoesntExists(self):
 
-        test=ContactControllerApi()
+        test=ContactControllerApi(self.config.access_token)
         try:
             response=test.get_contacts_using_get(batch_id='12345')
         except VeemError as error:
