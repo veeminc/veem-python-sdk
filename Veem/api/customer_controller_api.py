@@ -18,12 +18,13 @@ from Veem.configuration import Configuration
 class CustomerControllerApi(object):
 
 
-    def __init__(self, api_client=None):
+    def __init__(self, api_client=None, access_token):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
         self.config=Configuration()
         self.customer_url=self.config.host+"customers"
+        self.access_token=access_token
 
     def deserialize(self, response):
         totalElements=response['totalElements']
@@ -75,7 +76,7 @@ class CustomerControllerApi(object):
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
 
-        header_params['Authorization']=self.config.access_token
+        header_params['Authorization']=self.access_token
 
         header_params['X-REQUEST-ID']=str(uuid.uuid4())
         # HTTP header `Content-Type`
