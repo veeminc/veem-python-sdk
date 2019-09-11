@@ -37,6 +37,7 @@ setup(
     long_description_content_type='text/markdown',
     author = 'Veem',
     author_email = 'devsupport@veem.com',
+    url = 'https://github.com/veeminc/veem-python-sdk',
 
     classifiers = [
         'Development Status :: 5 - Production/Stable',
