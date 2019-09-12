@@ -16,8 +16,8 @@ The Veem Python SDK provides an interface to make it easier to call [Veem Global
 
 ## System Requirements
 1. The SDK works on **Python 2.7, Python 3.4 and beyond**.
-2. A [developer]((https://developer.veem.com/page/dev-dashboard-sandbox)) account
-3. An [application with a customer account]((https://developer.veem.com/page/dev-dashboard-sandbox))
+2. A [developer](https://developer.veem.com/page/dev-dashboard-sandbox) account
+3. An [application with a customer account](https://developer.veem.com/page/dev-dashboard-sandbox)
    and the associated client id and secret (Authorization flow / Client
    Credentials flow)
 
@@ -63,7 +63,7 @@ To test the code locally, follow the steps below:
 
 In order to get the access tokens from the Developer Portal;
 
-**Sign In with Veem** - Sign into [developer Portal ]((https://developer.veem.com/page/dev-dashboard-sandbox)).
+**Sign In with Veem** - Sign into [developer Portal ](https://developer.veem.com/page/dev-dashboard-sandbox).
 
 **Create an Application**- Create a new application by providing the `Name`, `OAuth2 Redirection URLs` and `Payment Status Webhooks`.
 
