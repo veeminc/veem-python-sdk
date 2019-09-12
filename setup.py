@@ -32,7 +32,8 @@ setup(
     version = version,
 
     # descriptions
-    description = ('package for veem sdk'),
+    description = ('Veem Python SDK provides an interface to call '
+                   'Veem Global Payments APIs (https://www.veem.com).'),
     long_description = read('DESCRIPTION.md'),
     long_description_content_type='text/markdown',
     author = 'Veem',
@@ -56,9 +57,8 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
 
-
     # project keywords
-    keywords = 'veem python sdk',
+    keywords = 'veem python sdk b2b payment',
 
     # uses namespace package
     namespace_packages = [],
