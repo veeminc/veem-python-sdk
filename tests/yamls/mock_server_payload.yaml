@@ -1,0 +1,44 @@
+post:
+  /oauth/token: >
+    {"access_token":"2b430420-2876-67ba17510571","token_type":"bearer","expires_in":13928063,"scope":"all","account_id":"6571","user_id":"19718","user_name":"devsupport+sandbox@veem.com"}
+  /veem/v1.1/exchangerates/quotes: >
+    {"id":"y39nzG","fromAmount":500.0,"fromCurrency":"CAD","toAmount":372.48,"toCurrency":"USD","rate":0.744962,"expiry":1567873029807}
+  /veem/v1.1/contacts: >
+    {"id":3148,"contactAccountId":8468,"email":"devsupport+gbp@veem.com","firstName":"Wei","lastName":"Wei","isoCountryCode":"CA","phoneNumber":"613-333-3333"}
+  /veem/v1.1/contacts/batch: >
+    {"batchId":859,"totalItems":1,"processedItems":0,"hasErrors":false,"status":"InProgress"}
+  /veem/v1.1/payments: >
+    {"requestId":"da311750-3459-4023-b4a7-cb40bba26f21","payee":{"email":"devsupport+gbp@veem.com","countryCode":"GB","phone":"tel:+44-370-010-0222"},"payeeAmount":{"number":50,"currency":"GBP"},"status":"Drafted","id":57836,"exchangeRate":{"fromAmount":82.85,"fromCurrency":"CAD","toAmount":50,"toCurrency":"GBP","rate":0.603492},"timeCreated":"2019-09-09T05:56:29.790Z","timeUpdated":"2019-09-09T05:56:30.050Z"}
+  /veem/v1.1/payments/57836/approve: >
+    {"requestId":"3f13399f-c29f-475d-9c7b-482fe42ca98e","payee":{"email":"devsupport+gbp@veem.com","countryCode":"GB","phone":"tel:+44-370-010-0222"},"payeeAmount":{"number":50.00,"currency":"GBP"},"status":"Sent","id":57836,"exchangeRate":{"fromAmount":82.87,"fromCurrency":"CAD","toAmount":50.00,"toCurrency":"GBP","rate":0.6033780000000000},"timeCreated":"2019-09-09T06:13:59.282Z","timeUpdated":"2019-09-09T06:14:00.577Z"}
+  /veem/v1.1/payments/57836/cancel: >
+    {"requestId":"3f13399f-c29f-475d-9c7b-482fe42ca98e","payee":{"email":"devsupport+gbp@veem.com","countryCode":"GB","phone":"tel:+44-370-010-0222"},"payeeAmount":{"number":50.00,"currency":"GBP"},"status":"Cancelled","id":57836,"exchangeRate":{"fromAmount":82.87,"fromCurrency":"CAD","toAmount":50.00,"toCurrency":"GBP","rate":0.6033780000000000},"timeCreated":"2019-09-09T06:13:59.282Z","timeUpdated":"2019-09-09T06:14:00.577Z"}
+  /veem/v1.1/invoices: >
+    {"requestId":"6bc30b6d-906f-4d85-accc-c234503261ce","amount":{"number":50.00,"currency":"GBP"},"payer":{"email":"devsupport+gbp@veem.com","countryCode":"GB","phone":"tel:+44-370-010-0222"},"id":38086,"status":"Sent","exchangeRate":{"fromAmount":50.00,"fromCurrency":"GBP","toAmount":79.75,"toCurrency":"CAD","rate":1.5949440000000000}}
+  /veem/v1.1/invoices/38086/approve: >
+    {"requestId":"6bc30b6d-906f-4d85-accc-c234503261ce","amount":{"number":50.00,"currency":"GBP"},"payer":{"email":"devsupport+gbp@veem.com","countryCode":"GB","phone":"tel:+44-370-010-0222"},"id":38086,"status":"Sent","exchangeRate":{"fromAmount":50.00,"fromCurrency":"GBP","toAmount":79.75,"toCurrency":"CAD","rate":1.5949440000000000}}
+  /veem/v1.1/invoices/38086/cancel: >
+    {"requestId":"6bc30b6d-906f-4d85-accc-c234503261ce","amount":{"number":50.00,"currency":"GBP"},"payer":{"email":"devsupport+gbp@veem.com","countryCode":"GB","phone":"tel:+44-370-010-0222"},"id":38086,"status":"Cancelled","exchangeRate":{"fromAmount":50.00,"fromCurrency":"GBP","toAmount":79.75,"toCurrency":"CAD","rate":1.5949440000000000}}
+  /veem/v1.1/attachments: >
+    {"name":"forUpload.png","referenceId":"2dbbb752-1731-4e3f-9a5c-a6bee82dc5da"}
+get:
+  /veem/v1.1/contacts: >
+    {"content":[{"id":2682,"contactAccountId":7964,"email":"devsupport+gbp@veem.com","firstName":"Wei","lastName":"Chen","businessName":"GBP Veem Wei","dialCode":"+44","isoCountryCode":"GB","phoneNumber":"370-010-0222"},{"id":1437,"contactAccountId":6577,"email":"devsupport+ca@veem.com","firstName":"Wei","lastName":"Chen","businessName":"Veem Way2","dialCode":"+1","isoCountryCode":"CA","phoneNumber":"613-261-1988"},{"id":1398,"contactAccountId":6648,"email":"devsupport+aliexpress@veem.com","firstName":"Wei","lastName":"Chen","businessName":"AliExpress","dialCode":"+1","isoCountryCode":"CN","phoneNumber":"613-261-1988"},{"id":1380,"contactAccountId":6631,"email":"devsupport+china@veem.com","firstName":"Wei","lastName":"Chen","businessName":"China Express","dialCode":"+1","isoCountryCode":"CN","phoneNumber":"613-261-1988"},{"id":1366,"contactAccountId":6622,"email":"devsupport+zapier@veem.com","firstName":"Wei","lastName":"Chen","businessName":"Veem Zapier","dialCode":"+1","isoCountryCode":"CA","phoneNumber":"613-261-1988"},{"id":1355,"contactAccountId":6605,"email":"devsupport+us@veem.com","firstName":"Wei","lastName":"Chen","businessName":"Veem Way","dialCode":"+1","isoCountryCode":"US","phoneNumber":"613-333-3333"},{"id":1335,"contactAccountId":6581,"email":"devsupport+z2@veem.com","firstName":"Wei","lastName":"Chen","businessName":"Veem 2","dialCode":"+1","isoCountryCode":"CA","phoneNumber":"613-444-4444"},{"id":1334,"contactAccountId":6580,"email":"devsupport@veem.com","firstName":"Wei","lastName":"Chen","businessName":"Veem Way","dialCode":"+1","isoCountryCode":"CA","phoneNumber":"613-333-3333"},{"id":1332,"contactAccountId":6576,"email":"devsupport+hackthon@veem.com","firstName":"Wei","lastName":"Chen","businessName":"333434344","dialCode":"+1","isoCountryCode":"US","phoneNumber":"613-261-1988"}],"totalElements":9,"last":true,"totalPages":1,"sort":[{"direction":"DESC","property":"timeCreated","ignoreCase":false,"nullHandling":"NATIVE","ascending":false}],"first":true,"numberOfElements":9,"size":20,"number":0}
+  /veem/v1.1/contacts/2682: >
+    {"id":2682,"contactAccountId":7964,"email":"devsupport+gbp@veem.com","firstName":"Wei","lastName":"Chen","businessName":"GBP Veem Wei","isoCountryCode":"GB","phoneNumber":"370-010-0222"}
+  /veem/v1.1/contacts/batch/859: >
+    {"batchId":859,"totalItems":1,"processedItems":1,"hasErrors":false,"batchItems":[{"batchItemId":1,"status":"Completed","errorInfo":null,"accountId":8469}],"status":"Completed"}
+  /veem/v1.1/customers: >
+    {"content":[{"id":1982,"firstName":"test_user","lastName":"test_last","name":"test","email":"devsupport@veem.com","isoCountryCode":"US","isContact":false}],"last":true,"totalElements":1,"totalPages":1,"sort":null,"first":true,"numberOfElements":1,"size":20,"number":0}
+  /veem/public/v1.1/country-currency-map: >
+    [{"country":"AE","countryName":"United Arab Emirates","sendingCurrencies":[],"receivingCurrencies":["AED","EUR","GBP","USD"],"purposeOfPaymentRequired":true,"invoiceAttachmentRequired":false,"purposeOfPaymentInfo":[{"countryCode":"AE","purposeCode":"Charitable Donation","description":"Charitable Donation","industry":null,"subindustry":null},{"countryCode":"AE","purposeCode":"Goods","description":"Goods","industry":null,"subindustry":null},{"countryCode":"AE","purposeCode":"Services","description":"Services","industry":null,"subindustry":null}]}]
+  /veem/v1.1/payments/57836: >
+    {"requestId":"c9df3329-cb29-4eeb-b680-9ce2580df429","payee":{"email":"devsupport+gbp@veem.com","countryCode":"GB","phone":"tel:+44-370-010-0222"},"payeeAmount":{"number":50.00,"currency":"GBP"},"status":"Drafted","id":57836,"exchangeRate":{"fromAmount":82.87,"fromCurrency":"CAD","toAmount":50.00,"toCurrency":"GBP","rate":0.6033780000000000},"timeCreated":"2019-09-09T06:13:59.282Z","timeUpdated":"2019-09-09T06:13:59.505Z"}
+  /veem/v1.1/payments: >
+    {"content":[{"requestId":"c9df3329-cb29-4eeb-b680-9ce2580df429","payee":{"email":"devsupport+gbp@veem.com","countryCode":"GB","phone":"tel:+44-370-010-0222"},"payeeAmount":{"number":50.00,"currency":"GBP"},"status":"Cancelled","id":57836,"exchangeRate":{"fromAmount":82.87,"fromCurrency":"CAD","toAmount":50.00,"toCurrency":"GBP","rate":0.6033780000000000},"timeCreated":"2019-09-09T06:13:59.282Z","timeUpdated":"2019-09-09T06:13:59.505Z"}]}
+  /veem/v1.1/invoices/38086: >
+    {"requestId":"6bc30b6d-906f-4d85-accc-c234503261ce","amount":{"number":50.00,"currency":"GBP"},"payer":{"email":"devsupport+gbp@veem.com","countryCode":"GB","phone":"tel:+44-370-010-0222"},"id":38086,"status":"Sent","exchangeRate":{"fromAmount":50.00,"fromCurrency":"GBP","toAmount":79.75,"toCurrency":"CAD","rate":1.5949440000000000}}
+  /veem/v1.1/invoices: >
+    {"content":[{"requestId":"6bc30b6d-906f-4d85-accc-c234503261ce","amount":{"number":50.00,"currency":"GBP"},"payer":{"email":"devsupport+gbp@veem.com","countryCode":"GB","phone":"tel:+44-370-010-0222"},"id":38086,"status":"Sent","exchangeRate":{"fromAmount":50.00,"fromCurrency":"GBP","toAmount":79.75,"toCurrency":"CAD","rate":1.5949440000000000}}]}
+  /veem/v1.1/attachments: >
+    {"name":"forUpload.png","referenceId":"2dbbb752-1731-4e3f-9a5c-a6bee82dc5da"}
