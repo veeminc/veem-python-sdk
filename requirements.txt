@@ -1,0 +1,5 @@
+six
+pyyaml
+urllib3
+attrdict
+requests
